@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSx31 | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="/assets/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/script.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-brand">MSx31</div>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/maheshsthr" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/str_mhes" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a onclick="toggleMenu()" class="ham-btn"><i class="fas fa-bars"></i></a>
+  </nav>
+
+  <div class="mob-menu" id="mob-menu">
+    <a href="#" onclick="hideMenu()">Home</a>
+    <a href="#skills" onclick="hideMenu()">Skills</a>
+    <a href="#projects" onclick="hideMenu()">Projects</a>
+    <a href="#certifications" onclick="hideMenu()">Certifications</a>
+    <a href="#education" onclick="hideMenu()">Education</a>
+    <a href="#contact" onclick="hideMenu()">Contact</a>
+  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hi, I’m <span>Mahesh Suthar</span></h1>
+    <h2>Web Developer</h2>
+    <p>I am passionate about crafting clean, responsive user interfaces.
+      Currently pursuing <b>BS in Computer Applications</b> at Gujarat University.
+      I enjoy solving problems and building tech-powered solutions.</p>
+    <a href="/assets/resume.pdf" target="_blank">Resume</a>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-title">Skills</div>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript (Basic)</div>
+      <div class="skill">Excel</div>
+      <div class="skill">Word</div>
+      <div class="skill">PowerPoint</div>
+      <div class="skill">Prompt Engineering</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-title">Projects</div>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal website showcasing my skills and projects.</p>
+        <div class="tech">HTML, CSS</div>
+        <div class="icons">
+          <a href="https://github.com/maheshsthr/msx31" target="_blank"><i class="fas fa-code"></i></a>
+          <a href="https://msx31.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Browser Search Extension</h3>
+        <p>Elegant Google Search UI.</p>
+        <div class="tech">HTML, CSS</div>
+        <div class="icons">
+          <a href="https://github.com/maheshsthr/mextension" target="_blank"><i class="fas fa-code"></i></a>
+          <a href="https://m-extension.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Property Listing Site</h3>
+        <p>Property Listing Site for any City (e.g Ahmedabad)</p>
+        <div class="tech">HTML, CSS</div>
+        <div class="icons">
+          <a href="https://github.com/maheshsthr/amdavadbyms" target="_blank"><i class="fas fa-code"></i></a>
+          <a href="https://amdavadbyms.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="section-title">Certifications</div>
+    <div class="certs">
+      <div class="card">
+        <h3>Deloitte Virtual Internship</h3>
+        <p>Completed Data Analytics Virtual Internship</p>
+        <div class="icons">
+          <a href="/assets/deloitte.pdf" target="_blank"><i class="fas fa-download"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="section-title">Education</div>
+    <div class="education">
+      <div class="card">
+        <h3>Bachelor of Science (Computer Application)</h3>
+        <p>LJ College of Computer Applications, Ahmedabad</p>
+        <p>2024–28 | Gujarat University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-title">Contact Me</div>
+    <div class="contact">
+      <img src="/assets/logo.jpg" alt="Mahesh Avatar">
+      <p>My inbox is open for you! Let’s connect and build something awesome.</p>
+      <p><strong>Email:</strong> <a href="mailto:msx31.mahesh@gmail.com">msx31.mahesh@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat, India</p>
+    </div>
+  </section>
+
+  <div class="footer">
+    <b>
+      Created by Mahesh
+      <div>
+        <a href="https://github.com/maheshsthr" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/str_mhes" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://snapchat.com/add/str_maheshh" target="_blank"><i class="fab fa-snapchat"></i></a>
+      </div>
+    </b>
+  </div>
+
+</body>
+
+</html>
