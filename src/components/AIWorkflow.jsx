@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
 import { ArrowDown, BrainCircuit, CheckCircle2, FileCode2, GitBranch, HelpCircle, MessageSquareText } from "lucide-react"
-import { Container, Reveal, SectionHeading } from "./Common.jsx"
+import { Container, Reveal, RevealItem, SectionHeading } from "./Common.jsx"
 
 const workflow = ["IDEA", "PLAN", "AI AGENT", "IMPLEMENT", "REVIEW", "TEST", "DEPLOY"]
 
@@ -62,11 +61,10 @@ export default function AIWorkflow() {
               <div className="flex flex-col items-center">
                 {workflow.map((step, i) => (
                   <div key={step} className="flex flex-col items-center">
-                    <motion.div
+                    <RevealItem
+                      delay={i * 0.1}
                       initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1, duration: 0.4 }}
+                      to={{ opacity: 1, y: 0 }}
                       className={`flex items-center gap-2.5 rounded-lg border px-4 py-2.5 ${
                         step === "AI AGENT"
                           ? "border-accent/40 bg-accent/10"
@@ -83,7 +81,7 @@ export default function AIWorkflow() {
                       >
                         {step}
                       </span>
-                    </motion.div>
+                    </RevealItem>
                     {i < workflow.length - 1 && <ArrowDown size={11} className="my-1 text-white/25" />}
                   </div>
                 ))}

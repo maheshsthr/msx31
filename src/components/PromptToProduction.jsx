@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
 import { ArrowDown, CircleOff, Rocket, Sparkles } from "lucide-react"
-import { Container, Reveal, SectionHeading } from "./Common.jsx"
+import { Container, Reveal, RevealItem, SectionHeading } from "./Common.jsx"
 
 const thinkSteps = ["Think", "Prompt", "Build", "Understand", "Test", "Ship"]
 
@@ -63,12 +62,12 @@ export default function PromptToProduction() {
                 </div>
                 <ol className="relative space-y-4">
                   {c.steps.map((step, i) => (
-                    <motion.li
+                    <RevealItem
+                      tag="li"
                       key={step}
+                      delay={i * 0.07}
                       initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.07 }}
+                      to={{ opacity: 1, x: 0 }}
                       className="flex items-center gap-3"
                     >
                       <span className="mono text-[10px] text-muted">
@@ -76,7 +75,7 @@ export default function PromptToProduction() {
                       </span>
                       <span className={`text-sm ${c.accent}`}>─</span>
                       <span className="text-sm text-ink-2">{step}</span>
-                    </motion.li>
+                    </RevealItem>
                   ))}
                 </ol>
               </div>

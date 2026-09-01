@@ -2,16 +2,19 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { BookOpen, ChevronDown, Database, ExternalLink, Network, ServerCog, Sparkles } from "lucide-react"
 import { GithubIcon } from "./BrandIcons.jsx"
+import { useInViewOnce } from "./Common.jsx"
 
 export default function ProjectCard({ project, index }) {
   const [open, setOpen] = useState(false)
+  const [ref, inView] = useInViewOnce()
   const showAi = Boolean(project.aiUsage)
   const showLive = Boolean(project.live)
 
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: (index % 2) * 0.08 }}
       className="rounded-2xl border border-white/10 bg-card transition-colors hover:border-white/20"

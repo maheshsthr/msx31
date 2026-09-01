@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
 import { ArrowDown, Database, KeyRound, Layout, Lock, Plug, Rocket, Server, Table2 } from "lucide-react"
-import { Container, Reveal, SectionHeading } from "./Common.jsx"
+import { Container, Reveal, RevealItem, SectionHeading } from "./Common.jsx"
 import { featuredProject } from "../data/projects.js"
 
 const flow = [
@@ -77,16 +76,15 @@ export default function FeaturedProject() {
               <div className="flex flex-col items-center">
                 {flow.map((node, i) => (
                   <div key={node.label} className="flex flex-col items-center">
-                    <motion.div
+                    <RevealItem
+                      delay={i * 0.06}
                       initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.06 }}
+                      to={{ opacity: 1, scale: 1 }}
                       className="flex w-full min-w-[200px] items-center justify-center gap-2 rounded-lg border border-white/10 bg-elevated px-4 py-2.5"
                     >
                       <node.icon size={13} className={node.color} />
                       <span className={`mono text-[11px] tracking-wider ${node.color}`}>{node.label}</span>
-                    </motion.div>
+                    </RevealItem>
                     {i < flow.length - 1 && <ArrowDown size={11} className="my-1 text-white/25" />}
                   </div>
                 ))}

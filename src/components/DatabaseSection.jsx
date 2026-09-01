@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion"
 import { ArrowDown, Database, KeyRound, Link2, ListFilter, RefreshCw, ShieldCheck } from "lucide-react"
-import { Container, Reveal, SectionHeading } from "./Common.jsx"
+import { Container, Reveal, RevealItem, SectionHeading } from "./Common.jsx"
 
 const schema = [
   { table: "USERS", relations: ["1:N — Projects", "1:N — Sessions", "N:1 — Roles"], color: "text-accent" },
@@ -38,11 +38,10 @@ export default function DatabaseSection() {
               <div className="flex flex-col items-center">
                 {schema.map((node, i) => (
                   <div key={node.table} className="flex flex-col items-center">
-                    <motion.div
+                    <RevealItem
+                      delay={i * 0.08}
                       initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
+                      to={{ opacity: 1, y: 0 }}
                       className="flex w-64 flex-col rounded-xl border border-white/10 bg-elevated px-5 py-3"
                     >
                       <span className={`mono text-xs font-semibold tracking-wider ${node.color}`}>
@@ -53,7 +52,7 @@ export default function DatabaseSection() {
                           <li key={r}>↳ {r}</li>
                         ))}
                       </ul>
-                    </motion.div>
+                    </RevealItem>
                     {i < schema.length - 1 && (
                       <div className="flex flex-col items-center py-1.5">
                         {!reduce && (
