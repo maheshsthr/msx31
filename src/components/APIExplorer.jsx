@@ -52,7 +52,7 @@ export default function APIExplorer() {
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-card">
             <div className="flex items-center gap-2 border-b border-white/10 bg-elevated px-5 py-3">
               <TerminalSquare size={15} className="shrink-0 text-ink-2" />
-              <span className="mono truncate text-xs text-ink-2">Mahesh Suthar / API Client</span>
+              <span className="mono min-w-0 truncate text-xs text-ink-2">Mahesh Suthar / API Client</span>
               <span className="mono ml-auto shrink-0 rounded bg-emerald-400/15 px-2 py-0.5 text-[10px] text-emerald-300">
                 ● connected
               </span>
@@ -80,7 +80,7 @@ export default function APIExplorer() {
                       >
                         {e.method}
                       </span>
-                      <span className="mono truncate text-xs text-ink-2">{e.endpoint}</span>
+                      <span className="mono min-w-0 truncate text-xs text-ink-2">{e.endpoint}</span>
                     </button>
                   ))}
                 </div>
@@ -93,7 +93,7 @@ export default function APIExplorer() {
                   >
                     {selected.method}
                   </span>
-                  <span className="mono truncate text-sm text-ink">{selected.endpoint}</span>
+                  <span className="mono min-w-0 flex-1 truncate text-sm text-ink">{selected.endpoint}</span>
                   <button
                     onClick={send}
                     className="ml-auto flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-accent-2 px-4 py-1.5 text-xs font-semibold text-white transition-transform hover:scale-105"
