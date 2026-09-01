@@ -7,7 +7,7 @@ export const developer = {
   githubUsername: "maheshsthr",
   portfolio: "https://msx31.vercel.app",
   email: "[YOUR_EMAIL]",
-  linkedin: "[YOUR_LINKEDIN_URL]",
+  linkedin: "https://www.linkedin.com/in/msx31",
   resume: "[YOUR_RESUME_URL]",
   heroHeading: "Building the Systems Behind Great Applications.",
   heroDescription:

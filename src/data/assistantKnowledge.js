@@ -52,7 +52,7 @@ const knowledge = [
   {
     keywords: ["contact", "email", "hire", "reach", "job", "intern", "internship", "freelance", "startup", "linkedin"],
     answer:
-      "To reach Mahesh, use the GitHub, LinkedIn and Email buttons in the Contact section. He's working toward hackathons, internships, startups and freelance backend work. (Email and LinkedIn links are placeholders until you fill in your real URLs.)",
+      "To reach Mahesh, use the GitHub, LinkedIn and Email buttons in the Contact section. He's working toward hackathons, internships, startups and freelance backend work. LinkedIn: linkedin.com/in/msx31 (Email is a placeholder until you fill in your real URL.)",
   },
   {
     keywords: ["location", "where", "live", "ahmedabad", "gujarat", "india"],
