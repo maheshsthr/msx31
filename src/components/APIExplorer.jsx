@@ -58,7 +58,7 @@ export default function APIExplorer() {
               </span>
             </div>
 
-            <div className="grid lg:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="border-b border-white/10 lg:border-b-0 lg:border-r">
                 <div className="flex flex-col">
                   {apiEndpoints.map((e) => (
