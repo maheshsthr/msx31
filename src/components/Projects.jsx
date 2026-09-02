@@ -5,7 +5,7 @@ import { developer } from "../data/developer.js"
 
 export default function Projects() {
   return (
-    <section id="projects" className="border-t border-white/5 bg-[#0b0b0d] py-20 sm:py-24">
+    <section id="projects" className="border-t border-white/5 bg-bg-2 py-20 sm:py-24">
       <Container>
         <SectionHeading
           label="projects"

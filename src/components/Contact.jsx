@@ -16,7 +16,9 @@ export default function Contact() {
         <div className="rounded-3xl border border-white/10 bg-card p-8 sm:p-12">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <Reveal>
-              <p className="mono mb-3 text-xs uppercase tracking-widest text-accent">// contact</p>
+              <p className="mono mb-3 flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-accent">
+                <span className="h-px w-8 bg-accent" /> contact
+              </p>
               <h2 className="text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">
                 Let's Build the Backend.
               </h2>
@@ -51,7 +53,7 @@ export default function Contact() {
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   open_to_hackathons · internships · freelance
                 </p>
-                <div className="rounded-xl border border-white/10 bg-[#0c0c0e] p-6">
+                <div className="rounded-xl border border-white/10 bg-bg p-6">
                   <pre className="text-xs leading-relaxed text-ink-2">
 {`POST /api/contact
 {

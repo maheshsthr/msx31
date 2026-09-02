@@ -2,9 +2,12 @@ import { useEffect, useRef, useState } from "react"
 
 export function SectionHeading({ label, title, description, id }) {
   return (
-    <div className="mb-12 max-w-3xl">
+    <div className="mb-10 max-w-3xl">
       {label && (
-        <p className="mono mb-3 text-xs uppercase tracking-widest text-accent">// {label}</p>
+        <p className="mono mb-3 flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] text-accent">
+          <span className="h-px w-8 bg-accent" />
+          {label}
+        </p>
       )}
       <h2
         id={id}

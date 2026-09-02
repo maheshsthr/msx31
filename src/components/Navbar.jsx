@@ -41,7 +41,7 @@ export default function Navbar({ onOpenPalette }) {
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-[#09090b]/95"
+          ? "border-b border-white/10 bg-bg/95"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -86,7 +86,7 @@ export default function Navbar({ onOpenPalette }) {
       </Container>
 
       {open && (
-        <Container className="border-t border-white/10 bg-[#09090b]/98 py-4 lg:hidden">
+        <Container className="border-t border-white/10 bg-bg/98 py-4 lg:hidden">
           <nav className="grid gap-1" aria-label="Mobile">
             {links.map((l) => (
               <a

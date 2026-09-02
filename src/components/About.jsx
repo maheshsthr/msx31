@@ -33,23 +33,25 @@ export default function About() {
           title="I Build More Than Endpoints"
           description="Understanding how applications work behind the interface — and building the systems that power them."
         />
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Reveal>
-            <div className="rounded-2xl border border-white/10 bg-card p-7 sm:p-8">
-              <p className="text-base leading-relaxed text-ink-2 sm:text-lg">
-                My focus is backend development — designing APIs, handling business logic, working
-                with databases and building the systems that power modern applications.
-              </p>
-              <p className="mt-5 text-base leading-relaxed text-ink-2 sm:text-lg">
-                I work primarily with JavaScript, Node.js, Express and Prisma, while exploring AI
-                agents and AI-assisted development to accelerate the process of turning ideas into
-                working software.
-              </p>
-              <p className="mt-5 text-base leading-relaxed text-ink-2 sm:text-lg">
-                I prefer learning by building real applications rather than only following
-                tutorials.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
+        <div className="grid gap-6 lg:grid-cols-5">
+          <Reveal className="lg:col-span-3">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-card p-7 sm:p-8">
+              <div>
+                <p className="text-base leading-relaxed text-ink-2 sm:text-lg">
+                  My focus is backend development — designing APIs, handling business logic, working
+                  with databases and building the systems that power modern applications.
+                </p>
+                <p className="mt-5 text-base leading-relaxed text-ink-2 sm:text-lg">
+                  I work primarily with JavaScript, Node.js, Express and Prisma, while exploring AI
+                  agents and AI-assisted development to accelerate the process of turning ideas into
+                  working software.
+                </p>
+                <p className="mt-5 text-base leading-relaxed text-ink-2 sm:text-lg">
+                  I prefer learning by building real applications rather than only following
+                  tutorials.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2 border-t border-white/10 pt-5">
                 <MonoBadge>Node.js</MonoBadge>
                 <MonoBadge>Express</MonoBadge>
                 <MonoBadge>Prisma</MonoBadge>
@@ -57,13 +59,17 @@ export default function About() {
               </div>
             </div>
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 lg:col-span-2">
             {points.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
-                <div className="h-full rounded-2xl border border-white/10 bg-card p-5 transition-colors hover:border-white/20">
-                  <p.icon size={20} className="text-accent" />
-                  <h3 className="mt-3 font-semibold text-ink">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-2">{p.body}</p>
+                <div className="group flex items-start gap-4 rounded-2xl border border-white/10 bg-card p-5 transition-colors hover:border-white/20">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                    <p.icon size={18} />
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-ink">{p.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-ink-2">{p.body}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}

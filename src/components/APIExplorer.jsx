@@ -13,7 +13,7 @@ const methodStyles = {
 
 function CodeBlock({ label, data }) {
   return (
-    <div className="mono overflow-hidden rounded-lg border border-white/10 bg-[#0c0c0e]">
+    <div className="mono overflow-hidden rounded-lg border border-white/10 bg-bg">
       <p className="border-b border-white/10 px-3 py-1.5 text-[10px] uppercase tracking-wider text-muted">
         {label}
       </p>
@@ -96,7 +96,7 @@ export default function APIExplorer() {
                   <span className="mono min-w-0 flex-1 truncate text-sm text-ink">{selected.endpoint}</span>
                   <button
                     onClick={send}
-                    className="ml-auto flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-accent-2 px-4 py-1.5 text-xs font-semibold text-white transition-transform hover:scale-105"
+                    className="ml-auto flex items-center gap-2 rounded-lg bg-accent-2 px-4 py-1.5 text-xs font-semibold text-white transition-transform hover:scale-105"
                   >
                     <Send size={13} /> Send
                   </button>

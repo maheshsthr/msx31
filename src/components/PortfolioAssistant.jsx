@@ -121,7 +121,7 @@ export default function PortfolioAssistant() {
                     <div
                       className={`max-w-[80%] rounded-xl px-4 py-2.5 text-sm leading-relaxed ${
                         m.role === "user"
-                          ? "bg-gradient-to-r from-accent to-accent-2 text-white"
+                          ? "bg-accent-2 text-white"
                           : "border border-white/10 bg-elevated text-ink-2"
                       }`}
                     >
@@ -195,7 +195,7 @@ export default function PortfolioAssistant() {
                 <button
                   type="submit"
                   aria-label="Send message"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-accent to-accent-2 text-white transition-transform hover:scale-105"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-2 text-white transition-transform hover:scale-105"
                 >
                   <Send size={14} />
                 </button>

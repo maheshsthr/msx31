@@ -15,10 +15,10 @@ export default function Hackathons() {
         />
 
         <Reveal>
-          <div className="overflow-hidden rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/10 to-transparent">
+          <div className="overflow-hidden rounded-2xl border border-accent/40 bg-accent/10">
             <div className="p-7 sm:p-8">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="mono inline-flex items-center gap-1.5 rounded-md bg-gradient-to-r from-accent to-accent-2 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                <span className="mono inline-flex items-center gap-1.5 rounded-md bg-accent-2 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
                   <Trophy size={12} /> Finalist
                 </span>
                 <span className="mono rounded border border-white/15 bg-elevated px-2 py-1 text-xs text-ink-2">

@@ -14,8 +14,8 @@ export default function BackendStack() {
           {stackGroups.map((group, gi) => (
             <Reveal key={group.id} delay={gi * 0.06}>
               <div className="h-full rounded-2xl border border-white/10 bg-card p-6 transition-colors hover:border-white/20">
-                <h3 className="mono mb-4 text-xs uppercase tracking-widest text-ink-2">
-                  <span className="text-accent">//</span> {group.label}
+                <h3 className="mono mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-ink-2">
+                  <span className="h-px w-4 bg-accent" /> {group.label}
                 </h3>
                 <ul className="space-y-2.5">
                   {group.items.map((item) => (

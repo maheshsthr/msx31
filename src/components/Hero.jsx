@@ -11,32 +11,23 @@ const pipeline = [
   { label: "RESPONSE", icon: Zap, color: "text-ink-2" },
 ]
 
-function FlowNode({ node, index }) {
+function FlowNode({ node, index, total }) {
   return (
-    <div
-      className="anim-entrance flex flex-col items-center"
-      style={{ animationDelay: `${index * 0.15}s` }}
-    >
+    <div key={node.label} className="flex flex-col items-center lg:min-w-0 lg:flex-1 lg:flex-row">
       <div
-        className="hero-float flex w-44 items-center justify-center gap-2 rounded-xl border border-white/10 bg-card px-4 py-2.5"
-        style={{ animationDelay: `${index * 0.35}s` }}
+        className="hero-float flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-elevated px-4 py-2.5 lg:w-auto lg:min-w-[130px]"
+        style={{ animationDelay: `${index * 0.15}s` }}
       >
         <node.icon size={14} className={node.color} />
         <span className={`mono text-[11px] font-medium tracking-wider ${node.color}`}>
           {node.label}
         </span>
       </div>
-      {index < pipeline.length - 1 && (
-        <div className="flex flex-col items-center py-1.5 text-white/25">
-          <ArrowDown size={12} />
-        </div>
+      {index < total - 1 && (
+        <ArrowDown size={12} className="my-1 text-white/25 lg:mx-1 lg:my-0 lg:shrink-0 lg:-rotate-90" />
       )}
     </div>
   )
-}
-
-function heroPipeline() {
-  return pipeline.map((node, i) => <FlowNode key={node.label} node={node} index={i} />)
 }
 
 export default function Hero({ onExplore }) {
@@ -49,19 +40,13 @@ export default function Hero({ onExplore }) {
           WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
         }}
       />
-      <div
-        className="pointer-events-none absolute -top-32 right-0 h-[480px] w-[480px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(99,102,241,0.16) 0%, transparent 65%)" }}
-      />
-      <div
-        className="pointer-events-none absolute top-24 -left-32 h-[360px] w-[360px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 65%)" }}
-      />
+      <div className="pointer-events-none absolute -top-32 right-0 h-[480px] w-[480px] rounded-full bg-accent/10" />
+      <div className="pointer-events-none absolute top-24 -left-32 h-[360px] w-[360px] rounded-full bg-accent-2/10" />
 
-      <Container className="relative grid gap-16 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
-        <div>
+      <Container className="relative py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl text-center">
           <p
-            className="anim-entrance mono mb-5 inline-flex items-center gap-2 rounded-md border border-white/10 bg-elevated px-3 py-1.5 text-[11px] tracking-wider text-ink-2"
+            className="anim-entrance mono mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-elevated px-4 py-1.5 text-[11px] tracking-wider text-ink-2"
             style={{ animationDelay: "0s" }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -69,7 +54,7 @@ export default function Hero({ onExplore }) {
           </p>
 
           <h1
-            className="anim-entrance text-4xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-5xl xl:text-6xl"
+            className="anim-entrance text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl xl:text-6xl"
             style={{ animationDelay: "0.1s" }}
           >
             {developer.heroHeading}
@@ -83,14 +68,14 @@ export default function Hero({ onExplore }) {
           </p>
 
           <p
-            className="anim-entrance mt-5 max-w-xl text-base leading-relaxed text-ink-2"
+            className="anim-entrance mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ink-2"
             style={{ animationDelay: "0.3s" }}
           >
             {developer.heroDescription}
           </p>
 
           <p
-            className="anim-entrance mt-3 max-w-xl text-sm leading-relaxed text-ink-2"
+            className="anim-entrance mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-ink-2"
             style={{ animationDelay: "0.4s" }}
           >
             <Sparkles size={14} className="mr-1 inline text-accent" />
@@ -98,12 +83,12 @@ export default function Hero({ onExplore }) {
           </p>
 
           <div
-            className="anim-entrance mt-8 flex flex-wrap gap-3"
+            className="anim-entrance mt-8 flex flex-wrap items-center justify-center gap-3"
             style={{ animationDelay: "0.5s" }}
           >
             <button
               onClick={onExplore}
-              className="rounded-lg bg-gradient-to-r from-accent to-accent-2 px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+              className="rounded-lg bg-accent-2 px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
             >
               Explore My Projects
             </button>
@@ -116,26 +101,30 @@ export default function Hero({ onExplore }) {
               View GitHub
             </a>
           </div>
-
-          <div
-            className="anim-fade mt-10 flex items-center gap-3 text-xs text-muted"
-            style={{ animationDelay: "0.7s" }}
-          >
-            <GitBranch size={14} />
-            <span className="mono">Ahmedabad, Gujarat, India</span>
-          </div>
         </div>
 
-        <div className="anim-scale mx-auto w-full max-w-sm" style={{ animationDelay: "0.25s" }}>
-          <div className="mx-auto w-full max-w-sm rounded-2xl border border-white/10 bg-[#141416]/95 p-6 sm:max-w-md lg:max-w-none">
-            <div className="mono mb-5 flex items-center justify-between gap-3 border-b border-white/10 pb-4 text-xs text-ink-2">
+        <div className="anim-fade relative mx-auto mt-16 max-w-5xl" style={{ animationDelay: "0.7s" }}>
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-card/90">
+            <div className="mono flex items-center justify-between gap-3 border-b border-white/10 px-5 py-3.5 text-xs text-ink-2 sm:px-6">
               <span className="truncate">
                 Mahesh Suthar <span className="text-muted">/</span>{" "}
                 <span className="text-accent">Backend Dev</span>
               </span>
               <span className="shrink-0 text-emerald-400">— system up · port 3000</span>
             </div>
-            <div className="flex flex-col items-center">{heroPipeline()}</div>
+
+            <div className="px-5 py-8 sm:px-8">
+              <div className="flex flex-col items-center gap-1 lg:flex-row lg:items-center lg:justify-between lg:gap-0">
+                {pipeline.map((node, i) => (
+                  <FlowNode key={node.label} node={node} index={i} total={pipeline.length} />
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 border-t border-white/10 px-5 py-3 text-xs text-muted sm:px-6">
+              <GitBranch size={14} />
+              <span className="mono">{developer.location}</span>
+            </div>
           </div>
         </div>
       </Container>
