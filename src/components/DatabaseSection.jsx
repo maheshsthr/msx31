@@ -39,9 +39,8 @@ export default function DatabaseSection() {
                 {schema.map((node, i) => (
                   <div key={node.table} className="flex flex-col items-center">
                     <RevealItem
+                      variant="up-sm"
                       delay={i * 0.08}
-                      initial={{ opacity: 0, y: 10 }}
-                      to={{ opacity: 1, y: 0 }}
                       className="flex w-64 flex-col rounded-xl border border-white/10 bg-elevated px-5 py-3"
                     >
                       <span className={`mono text-xs font-semibold tracking-wider ${node.color}`}>

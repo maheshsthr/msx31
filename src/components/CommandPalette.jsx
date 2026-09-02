@@ -56,7 +56,7 @@ export default function CommandPalette({ open, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.15 }}
-          className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 px-4 pt-[18vh] backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 px-4 pt-[18vh]"
           onClick={onClose}
           role="dialog"
           aria-modal="true"

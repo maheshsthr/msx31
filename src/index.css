@@ -39,6 +39,107 @@ html {
   }
 }
 
+/* Entrance animations (CSS-driven so content can never be stuck invisible on iOS).
+   Elements remain visible even if animations are interrupted or paused. */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-float {
+  animation: hero-float 3s ease-in-out infinite;
+}
+
+.anim-entrance {
+  animation: hero-fade-up 0.6s ease-out both;
+}
+
+.anim-fade {
+  animation: hero-fade-in 0.8s ease-out both;
+}
+
+.anim-scale {
+  animation: hero-fade-scale 0.7s ease-out both;
+}
+
+/* Scroll-reveal system.
+   Default (no classes) is fully visible, so content can never be stuck hidden.
+   `.reveal-ready` hides + offsets; `.reveal-in` restores it via native CSS
+   transitions — reliable on iOS Safari where WAAPI/JS-driven animation can stall.
+   `--reveal-y`/`--reveal-delay` are set inline per element. */
+.reveal-wrap {
+  transition:
+    opacity 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98) var(--reveal-delay, 0s),
+    transform 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98) var(--reveal-delay, 0s);
+}
+
+.reveal-ready {
+  opacity: 0;
+}
+
+.reveal-ready.reveal-up {
+  transform: translateY(24px);
+}
+
+.reveal-ready.reveal-up-sm {
+  transform: translateY(10px);
+}
+
+.reveal-ready.reveal-scale {
+  transform: scale(0.95);
+}
+
+.reveal-ready.reveal-right {
+  transform: translateX(-10px);
+}
+
+.reveal-ready.reveal-card {
+  transform: translateY(20px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
 body {
   background-color: #09090b;
   color: #f4f4f5;

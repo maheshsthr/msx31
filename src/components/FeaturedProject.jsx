@@ -77,9 +77,8 @@ export default function FeaturedProject() {
                 {flow.map((node, i) => (
                   <div key={node.label} className="flex flex-col items-center">
                     <RevealItem
+                      variant="scale"
                       delay={i * 0.06}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      to={{ opacity: 1, scale: 1 }}
                       className="flex w-full min-w-[200px] items-center justify-center gap-2 rounded-lg border border-white/10 bg-elevated px-4 py-2.5"
                     >
                       <node.icon size={13} className={node.color} />

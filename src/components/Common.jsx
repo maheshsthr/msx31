@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
 
 export function SectionHeading({ label, title, description, id }) {
   return (
@@ -48,7 +47,7 @@ export function useInViewOnce() {
           }
         }
       },
-      { threshold: 0.1 }
+      { rootMargin: "0px 0px 400px 0px", threshold: 0.01 }
     )
     io.observe(el)
 
@@ -57,7 +56,7 @@ export function useInViewOnce() {
     // invisible until the user scrolls. Fall back to a direct geometry check.
     const check = () => {
       const rect = el.getBoundingClientRect()
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
+      if (rect.top < window.innerHeight + 400 && rect.bottom > -400) {
         setInView(true)
         io.disconnect()
         window.removeEventListener("scroll", check)
@@ -80,38 +79,27 @@ export function useInViewOnce() {
   return [ref, inView]
 }
 
-export function Reveal({ children, delay = 0, className = "", y = 24 }) {
+export function Reveal({ children, delay = 0, className = "" }) {
   const [ref, inView] = useInViewOnce()
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration: 0.5, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={className}
+      style={{ transitionDelay: `${delay}s` }}
+      className={`reveal-wrap reveal-up ${inView ? "reveal-in" : "reveal-ready"} ${className ?? ""}`}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
-export function RevealItem({
-  children,
-  className = "",
-  initial = { opacity: 0 },
-  to = { opacity: 1 },
-  delay = 0,
-  tag = "div",
-}) {
+export function RevealItem({ children, className = "", delay = 0, tag = "div", variant = "up-sm" }) {
   const [ref, inView] = useInViewOnce()
-  const Tag = motion[tag]
+  const Tag = tag
   return (
     <Tag
       ref={ref}
-      initial={initial}
-      animate={inView ? to : initial}
-      transition={{ duration: 0.4, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={className}
+      style={{ transitionDelay: `${delay}s` }}
+      className={`reveal-wrap reveal-${variant} ${inView ? "reveal-in" : "reveal-ready"} ${className ?? ""}`}
     >
       {children}
     </Tag>

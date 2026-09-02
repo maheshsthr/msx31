@@ -62,9 +62,8 @@ export default function AIWorkflow() {
                 {workflow.map((step, i) => (
                   <div key={step} className="flex flex-col items-center">
                     <RevealItem
+                      variant="up-sm"
                       delay={i * 0.1}
-                      initial={{ opacity: 0, y: 10 }}
-                      to={{ opacity: 1, y: 0 }}
                       className={`flex items-center gap-2.5 rounded-lg border px-4 py-2.5 ${
                         step === "AI AGENT"
                           ? "border-accent/40 bg-accent/10"

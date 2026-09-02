@@ -64,10 +64,9 @@ export default function PromptToProduction() {
                   {c.steps.map((step, i) => (
                     <RevealItem
                       tag="li"
+                      variant="right"
                       key={step}
                       delay={i * 0.07}
-                      initial={{ opacity: 0, x: -10 }}
-                      to={{ opacity: 1, x: 0 }}
                       className="flex items-center gap-3"
                     >
                       <span className="mono text-[10px] text-muted">

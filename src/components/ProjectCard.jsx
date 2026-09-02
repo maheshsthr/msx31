@@ -11,13 +11,10 @@ export default function ProjectCard({ project, index }) {
   const showLive = Boolean(project.live)
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: (index % 2) * 0.08 }}
-      className="rounded-2xl border border-white/10 bg-card transition-colors hover:border-white/20"
+      style={{ "--reveal-delay": `${(index % 2) * 0.08}s` }}
+      className={`reveal-wrap reveal-card ${inView ? "reveal-in" : "reveal-ready"} rounded-2xl border border-white/10 bg-card transition-colors hover:border-white/20`}
     >
       <button
         onClick={() => setOpen(!open)}
@@ -102,7 +99,7 @@ export default function ProjectCard({ project, index }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   )
 }
 
